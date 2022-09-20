@@ -18,10 +18,9 @@ const fetchData = async () => {
     try {
         const response = await fetch(apiURL, options);
         const data = await response.json();
-        console.log(data);
 
         // destructuring data object
-        const { countries_stat, statistic_taken_at, world_total } = data;
+        const { countries_stat, statistic_taken_at } = data;
 
         if (response.status === 429) {
             dateTimeOutput.innerText =
@@ -32,7 +31,7 @@ const fetchData = async () => {
             dateTimeOutput.innerText = `(This data was last updated on ${statistic_taken_at})`;
 
             // making the table from array of objects
-            for (let i = 0; i < countries_stat.length; i++) {
+            for (const countryObj of countries_stat) {
                 // destructuring each object of array
                 const {
                     country_name,
@@ -42,7 +41,7 @@ const fetchData = async () => {
                     serious_critical,
                     active_cases,
                     total_tests,
-                } = countries_stat[i];
+                } = countryObj;
 
                 // displaying all rows of table
                 table.innerHTML += `<tr>
@@ -63,15 +62,3 @@ const fetchData = async () => {
 };
 
 fetchData();
-
-// world_total: Object
-// total_cases: "509,268,964"
-// new_cases: "204,268"
-// total_deaths: "6,242,509"
-// new_deaths: "630"
-// total_recovered: "461,827,849"
-// active_cases: "41,198,606"
-// serious_critical: "42,510"
-// total_cases_per_1m_population: "65,334"
-// deaths_per_1m_population: "800.9"
-// statistic_taken_at: "2022-04-24 11:18:01"
