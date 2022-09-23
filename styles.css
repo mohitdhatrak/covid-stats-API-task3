@@ -34,6 +34,9 @@ body {
     margin: 2rem auto;
     border: 1px solid var(--primary-color);
     max-width: 80%;
+    /* min-width: max-content;
+    border-collapse: separate;
+    border-spacing: 0; */
 }
 
 td,
