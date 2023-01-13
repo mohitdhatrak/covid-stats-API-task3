@@ -1,3 +1,5 @@
+import { RAPID_API_KEY } from "/config.js";
+
 const dateTimeOutput = document.querySelector("#stats-date-time");
 const table = document.querySelector("#table");
 
@@ -7,7 +9,7 @@ table.style.display = "none";
 const options = {
     method: "GET",
     headers: {
-        "X-RapidAPI-Key": "00324e1312msh927d326459a73e2p1c072ajsn7240432d9747",
+        "X-RapidAPI-Key": RAPID_API_KEY,
         "X-RapidAPI-Host": "corona-virus-world-and-india-data.p.rapidapi.com",
     },
 };
