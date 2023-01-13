@@ -1,4 +1,4 @@
-import { RAPID_API_KEY } from "config.js";
+import { RAPID_API_KEY } from "./config.js";
 
 const dateTimeOutput = document.querySelector("#stats-date-time");
 const table = document.querySelector("#table");
